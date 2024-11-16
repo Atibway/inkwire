@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import DotPattern from "@/components/ui/dot-pattern";
 const Banner = () => {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl mb-5">
+    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden text-white bg-gradient-to-br from-gray-900 to-gray-800"
+    >
       
       <div className="w-full h-full flex justify-center items-center relative overflow-hidden">
         <Image

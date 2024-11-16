@@ -6,13 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import PulsatingButton from "../ui/pulsating-button";
 import { Button } from "../ui/button";
+import MobileSideBar from "@/app/(root)/_components/mobile-sidebar";
 
 export const Toolbar = () => {
   const user  = useCurrentUser()
 
   return (
     <>
-      <PulsatingButton  className="text-lg bg-blue-400">
+      <PulsatingButton  className="text-lg hidden sm:block bg-blue-400">
         Start Trial
       </PulsatingButton>
       {user ? (
@@ -36,6 +37,7 @@ export const Toolbar = () => {
           </Button>
         </Link>
       )}
+      <MobileSideBar/>
     </>
   );
 };
