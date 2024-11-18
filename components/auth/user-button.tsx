@@ -9,7 +9,7 @@ import {
 import { FaUser } from "react-icons/fa"
 import { useCurrentUser } from "@/hooks/use-current-user"
 import { LogoutButton } from "./logout-button"
-import {LogIn, LogInIcon, LogOutIcon, Settings} from "lucide-react"
+import { LogInIcon, LogOutIcon, Settings} from "lucide-react"
 import Link from "next/link"
 
 

@@ -11,11 +11,9 @@ const prisma = new PrismaClient();
 export const addStripe = async () => {
   try {
    const user = await currentUser()
-    if (user?.email) {
+    if (!user?.id) {
       throw new Error("No user session found.");
     }
-
- 
 
     // Check if membership already exists for this user
     const membership = await db.membership.findFirst({
@@ -40,7 +38,7 @@ await db.membership.create({
   data:{
    userId: user?.id as string,
    stripeCustomerId: customer.id,
-   plan: "GROW"
+   plan: "LAUNCH"
   }
  });
       })  

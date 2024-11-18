@@ -20,9 +20,6 @@ export default async function Providers({
 
   const user = await currentUser()
 
-  const isStripeCustomerIdHas = async () => {
-  };
-
   return (
     <>
     

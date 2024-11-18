@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from 'react';
-import axios from "axios";
 import toast from 'react-hot-toast';
 import { useSearchParams } from 'next/navigation';
 import { subscribe } from '@/actions/add-subscribe';

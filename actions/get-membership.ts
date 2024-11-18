@@ -9,9 +9,6 @@ export const getMemberShip = async () => {
    
       const user = await currentUser()
       if (user) {
-        // const membership = await Membership.findOne({
-        //   userId: user?.id,
-        // });
         const membership = await db.membership.findFirst({
           where: {
            userId: user.id

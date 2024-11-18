@@ -1,7 +1,5 @@
 "use client"
 import { GrowPlan, freePlan, scalePlan } from "@/data/constants";
-
-import { useTheme } from "next-themes";
 import React from "react";
 import { BackgroundGradient } from "../../../components/ui/background-gradient";
 
@@ -12,13 +10,13 @@ import { useRouter } from "next/navigation";
 import { stripeSubscribe } from "@/actions/stripe-subscribe";
 
 const PricingCard = ({ active }: { active: string }) => {
-  const { theme } = useTheme();
+  
   const user  = useCurrentUser()
   const history = useRouter();
   const handleSubscription = async ({ price }: { price: string }) => {
     await stripeSubscribe({ price: price, userId: user?.id as string }).then(
       (res: any) => {
-        history.push(res);
+        history?.push(res);
       }
     );
   };
@@ -41,7 +39,7 @@ const PricingCard = ({ active }: { active: string }) => {
           <path
             fill="#fff"
             stroke="#3843D0"
-            stroke-width="3"
+            strokeWidth="3"
             d="M33.398 13.25a6.512 6.512 0 0 1 0 6.5l-4.887 8.487a6.512 6.512 0 0 1-5.643 3.263h-9.736a6.512 6.512 0 0 1-5.643-3.263L2.602 19.75a6.512 6.512 0 0 1 0-6.498l4.887-8.488A6.512 6.512 0 0 1 13.132 1.5h9.736a6.512 6.512 0 0 1 5.643 3.263l4.887 8.488Z"
           ></path>
         </svg>
@@ -95,7 +93,7 @@ const PricingCard = ({ active }: { active: string }) => {
           <path
             fill="#fff"
             stroke="#3843D0"
-            stroke-width="3"
+            strokeWidth="3"
             d="M33.398 13.25a6.512 6.512 0 0 1 0 6.5l-4.887 8.487a6.512 6.512 0 0 1-5.643 3.263h-9.736a6.512 6.512 0 0 1-5.643-3.263L2.602 19.75a6.512 6.512 0 0 1 0-6.498l4.887-8.488A6.512 6.512 0 0 1 13.132 1.5h9.736a6.512 6.512 0 0 1 5.643 3.263l4.887 8.488Z"
           ></path>
         </svg>
@@ -160,7 +158,7 @@ const PricingCard = ({ active }: { active: string }) => {
           <path
             fill="#fff"
             stroke="#3843D0"
-            stroke-width="3"
+            strokeWidth="3"
             d="M33.398 13.25a6.512 6.512 0 0 1 0 6.5l-4.887 8.487a6.512 6.512 0 0 1-5.643 3.263h-9.736a6.512 6.512 0 0 1-5.643-3.263L2.602 19.75a6.512 6.512 0 0 1 0-6.498l4.887-8.488A6.512 6.512 0 0 1 13.132 1.5h9.736a6.512 6.512 0 0 1 5.643 3.263l4.887 8.488Z"
           ></path>
         </svg>

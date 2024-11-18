@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { redirect, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { useEffect } from "react";
 import useRouteChange from "@/hooks/useRouteChange";
@@ -15,10 +15,6 @@ export const DashboardItems = ({ bottomContent }: { bottomContent?: boolean }) =
   const  user = useCurrentUser()
   const pathName = usePathname();
 
-  const LogoutHandler = () => {
-   
-    redirect("/sign-in");
-  };
 
   useEffect(() => {
     setActiveRoute(pathName);

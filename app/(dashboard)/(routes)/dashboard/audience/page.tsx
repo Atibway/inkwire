@@ -4,14 +4,12 @@ import { columns } from "./_components/columns";
 import { DataTable } from "./_components/data-table";
 import { subscribers } from "@/data/subscribers";
 
-
-
 const AudiencePage = async() => {
   const user =  await currentUser()
  const data = await subscribers({newsLetterOwnerId: user?.id})
 
   return (
-    <div className="w-full p-5 h-screen overflow-hidden">
+    <div className="w-full p-5 min-h-screen overflow-hidden">
        <h1 className="text-2xl font-medium">
         Subscribers
        </h1>

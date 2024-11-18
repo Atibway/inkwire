@@ -15,6 +15,7 @@ export const stripeSubscribe = async ({
   userId: string ;
 }) => {
   try {
+  
     const user = await db.membership.findFirst({
       where:{
         userId
@@ -37,7 +38,6 @@ export const stripeSubscribe = async ({
         },
       },
     });
-
     if (!checkoutSession.url) {
       return {
         message: "Could not create checkout session!",

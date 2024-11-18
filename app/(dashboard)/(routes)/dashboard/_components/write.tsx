@@ -34,7 +34,7 @@ export const Write = () => {
   }, [user]);
 
   const FindEmails = async () => {
-   await getEmails({newsLetterOwnerId: user?.id!})
+   await getEmails({newsLetterOwnerId: user?.id})
    .then((res)=> {
     setEmails(res)
    })
@@ -45,7 +45,7 @@ export const Write = () => {
   };
 
   const deleteHanlder = async (id: string) => {
-    await deleteEmail({ emailId: id }).then((res) => {
+    await deleteEmail({ emailId: id }).then(() => {
       FindEmails();
     });
   };

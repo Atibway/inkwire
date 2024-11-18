@@ -11,15 +11,14 @@ const Banner = () => {
     >
       
       <div className="w-full h-full flex justify-center items-center relative overflow-hidden">
-        <Image
-          src={
-            "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=1920,quality=75/www/homepage/MobileHero.png"
-          }
-          alt=""
-          width={800}
-          height={500}
-          className="w-[80%] object-cover spin-slow"
-        />
+      <Image
+    src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=1920,quality=75/www/homepage/MobileHero.png"
+    alt="Mobile Hero Image"
+    width={800}
+    height={500}
+    className="w-[80%] h-auto object-cover spin-slow"
+    priority // This ensures optimized loading for above-the-fold images
+  />
         <div className="absolute">
           <h1 className="font-clashDisplay uppercase font-bold text-cyber-ink text-[2.75rem] md:text-[7xl] lg:text-[4rem]  max-w-4xl mx-auto text-center z-10  ">
             THE NEWSLETTER PLATFORM BUILT FOR

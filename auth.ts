@@ -4,7 +4,6 @@ import {PrismaAdapter} from "@auth/prisma-adapter"
 import { db } from "./lib/db"
 import { getUserById } from "./data/user"
 import { UserRole } from "@prisma/client"
-import { getTwoFactorConfirmationByUserId } from "./data/two-factor-confirmation"
 import { getAccountByUserId } from "./data/account"
 export const {
   handlers, auth, signIn, signOut} = NextAuth({

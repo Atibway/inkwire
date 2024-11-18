@@ -9,7 +9,6 @@ import { saveEmail } from "@/actions/save-email";
 import toast from "react-hot-toast";
 import {  PacmanLoader} from "react-spinners"
 import { GetEmailDetails } from "@/actions/get-email-details";
-import { sendEmail } from "@/lib/email-sender";
 import axios from "axios";
 
 
@@ -84,7 +83,7 @@ setLoading(false)
     setLoading(true)
     await GetEmailDetails({
       title: subjectTitle,
-      newsLetterOwnerId: user?.id!,
+      newsLetterOwnerId: user?.id,
     }).then((res: any) => {
       if (res) {
         setJsonData(JSON.parse(res?.content));

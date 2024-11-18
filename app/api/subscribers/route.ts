@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { subscribers } from "@/data/subscribers";
 import { currentUser } from '@/lib/auth';
 
-export async function GET(request: Request) {
+export async function GET() {
 const user = await currentUser()
   try {
     const data = await subscribers({ newsLetterOwnerId: user?.id });

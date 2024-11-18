@@ -4,11 +4,13 @@ import { UserPlan } from "./userPlan";
 import { DashboardItems } from "./dashboard-items";
 import { currentUser } from "@/lib/auth";
 import { subscribers } from "@/data/subscribers";
+import { getMemberShip } from "@/actions/get-membership";
 
 
 const DashboardSideBar = async() => {
   const user = await currentUser()
   const subscribersData = await subscribers({newsLetterOwnerId: user?.id})
+  const membership = await getMemberShip()
   return (
     <div className="p-2">
       <div className="p-2 flex items-center bg-[#f5f5f5f5] rounded">
@@ -18,6 +20,7 @@ const DashboardSideBar = async() => {
       <div>
         <DashboardItems />
         <UserPlan
+        membership={membership}
         subscribers={subscribersData} 
         />
         <DashboardItems bottomContent={true} />

@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import create from 'zustand';
-import { subscribers } from "@/data/subscribers";
-import { currentUser } from '@/lib/auth';
+
 
 // Define the Subscriber type to match the data structure
 interface Subscriber {

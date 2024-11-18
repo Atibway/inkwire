@@ -1,6 +1,4 @@
 
-
-import { getEmails } from "@/actions/get-emails";
 import { ICONS } from "@/lib/icons";
 import { subscriber } from "@prisma/client";
 

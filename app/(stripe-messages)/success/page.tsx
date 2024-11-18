@@ -7,7 +7,7 @@ const SuccessPage = () => {
       <div className="max-w-md w-full bg-gray-800 rounded-lg shadow-lg p-8 text-center">
         <h1 className="text-3xl font-bold text-white mb-4">🎉 Success!</h1>
         <p className="text-gray-300 mb-6">
-          Your subscription was processed successfully! We're excited to have you onboard.
+          Your subscription was processed successfully! We&apos;re excited to have you onboard.
         </p>
         <Link
         href={"/dashboard"}

@@ -43,7 +43,7 @@ export const subscribe = async ({
     }
 
     // Create new subscriber
-    const subscriber = await db.subscriber.create({
+    await db.subscriber.create({
       data:{
       email,
       newsLetterOwnerId: newsletterOwner?.id,

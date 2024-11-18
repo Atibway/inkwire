@@ -27,8 +27,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { UserRole } from "@prisma/client"
 import { Switch } from "@/components/ui/switch"
 import { redirect } from "next/navigation"
+import Link from "next/link"
+import Image from "next/image"
 
-const SettingPage = () => {
+export const ManageSetting = () => {
    const {update}= useSession()
   const [isPending] = useTransition()
   const [error, setError] = useState<string | undefined>()
@@ -73,6 +75,21 @@ const onSubmit = (values: z.infer<typeof SettingsSchema>)=> {
 
     <Card className="md:mt-[20px] md:w-[600px]">
 <CardHeader>
+  <div className="flex justify-center">
+{user && (
+        <>
+          <Link href={"/dashboard"}>
+            <Image
+              src={user?.image || ""}
+              alt=""
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+          </Link>
+        </>
+      )}
+  </div>
   <p className="text-2xl font-semibold text-center">
 ⚙ Settings
   </p>
@@ -230,5 +247,3 @@ const onSubmit = (values: z.infer<typeof SettingsSchema>)=> {
     </div>
   )
 }
-
-export default SettingPage
