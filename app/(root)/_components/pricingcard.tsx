@@ -2,24 +2,27 @@
 import { GrowPlan, freePlan, scalePlan } from "@/data/constants";
 import React from "react";
 import { BackgroundGradient } from "../../../components/ui/background-gradient";
-
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { CardSpotlight } from "../../../components/ui/card-spotlight";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { useRouter } from "next/navigation";
+import { stripeSubscribe } from "@/actions/stripe-subscribe";
 import { subscribe } from "@/actions/add-subscribe";
 
 const PricingCard = ({ active }: { active: string }) => {
   
   const user  = useCurrentUser()
   const history = useRouter();
-  const handleSubscription = async ({ price }: { price: string }) => {
-    // await stripeSubscribe({ price: price, userId: user?.id as string }).then(
-    //   (res: any) => {
-    //     history?.push(res);
-    //   }
-    // );
+  const handleFreeTrail = async()=>{
     await subscribe({userId:user.id, email: user.email})
+  }
+  const handleSubscription = async ({ price }: { price: string }) => {
+    await stripeSubscribe({ price: price, userId: user?.id as string }).then(
+      (res: any) => {
+        history?.push(res);
+      }
+    );
+    
   };
   return (
     <div className="w-full md:flex items-start justify-around py-8">
@@ -61,7 +64,9 @@ const PricingCard = ({ active }: { active: string }) => {
           </div>
         ))}
       </div>
-      <RainbowButton >
+      <RainbowButton
+      onClick={handleFreeTrail}
+      >
           Get Started
           <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
             $0
