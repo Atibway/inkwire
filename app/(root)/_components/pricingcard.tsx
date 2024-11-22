@@ -8,17 +8,19 @@ import { CardSpotlight } from "../../../components/ui/card-spotlight";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { useRouter } from "next/navigation";
 import { stripeSubscribe } from "@/actions/stripe-subscribe";
+import { subscribe } from "@/actions/add-subscribe";
 
 const PricingCard = ({ active }: { active: string }) => {
   
   const user  = useCurrentUser()
   const history = useRouter();
   const handleSubscription = async ({ price }: { price: string }) => {
-    await stripeSubscribe({ price: price, userId: user?.id as string }).then(
-      (res: any) => {
-        history?.push(res);
-      }
-    );
+    // await stripeSubscribe({ price: price, userId: user?.id as string }).then(
+    //   (res: any) => {
+    //     history?.push(res);
+    //   }
+    // );
+    await subscribe({userId:user.id, email: user.email})
   };
   return (
     <div className="w-full md:flex items-start justify-around py-8">
