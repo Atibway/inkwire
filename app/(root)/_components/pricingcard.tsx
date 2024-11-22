@@ -7,7 +7,6 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { CardSpotlight } from "../../../components/ui/card-spotlight";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { useRouter } from "next/navigation";
-import { stripeSubscribe } from "@/actions/stripe-subscribe";
 import { subscribe } from "@/actions/add-subscribe";
 
 const PricingCard = ({ active }: { active: string }) => {
