@@ -7,14 +7,21 @@ import { CardSpotlight } from "../../../components/ui/card-spotlight";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { useRouter } from "next/navigation";
 import { stripeSubscribe } from "@/actions/stripe-subscribe";
-import { subscribe } from "@/actions/add-subscribe";
+import { addStripe } from "@/actions/add-stripe";
+
 
 const PricingCard = ({ active }: { active: string }) => {
   
   const user  = useCurrentUser()
   const history = useRouter();
   const handleFreeTrail = async()=>{
-    await subscribe({userId:user.id, email: user.email})
+    if(!user){
+      history.push("/auth/login")
+    }else{
+      await addStripe().then(()=>{
+        history.push("/dashboard")
+      })
+    }
   }
   const handleSubscription = async ({ price }: { price: string }) => {
     await stripeSubscribe({ price: price, userId: user?.id as string }).then(
