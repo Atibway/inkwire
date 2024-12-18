@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <span className="sr-only">Inkwire</span>
+              <span className="sr-only">Mailminted</span>
               <Logo/>
             </Link>
             <p className="text-lg">
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Inkwire, Inc. All rights reserved.
+            © {new Date().getFullYear()} Mailminted, Inc. All rights reserved.
           </p>
         </div>
       </div>

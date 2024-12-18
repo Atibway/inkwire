@@ -21,7 +21,7 @@ const Logo = () => {
 
       {/* Text */}
       <h5 className="text-3xl font-bold tracking-tight text-primary">
-        Inkwire
+        Mailminted
       </h5>
     </div>
   );
